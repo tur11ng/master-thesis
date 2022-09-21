@@ -70,7 +70,7 @@ includehead,includefoot]{geometry}
     classfont=roman,
     langfont=roman,
     funcfont=roman]{complexity}
-\usepackage{refcheck}
+% \usepackage{refcheck}
 
 
 
@@ -147,3 +147,5 @@ scientific documents}
 \newcommand{\oracle}{\mathcal{O}}
 
 \newcommand{\EN}[1]{\foreignlanguage{english}{#1}}
+
+\newenvironment{longlisting}{\captionsetup{type=listing}}{}
