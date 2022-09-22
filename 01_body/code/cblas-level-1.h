@@ -27,7 +27,6 @@ void   cblas_cdotu_sub(const CBLAS_INT N, const void *X, const CBLAS_INT incX,
                      const void *Y, const CBLAS_INT incY, void *dotu);
 void   cblas_cdotc_sub(const CBLAS_INT N, const void *X, const CBLAS_INT incX,
                      const void *Y, const CBLAS_INT incY, void *dotc);
-
 void   cblas_zdotu_sub(const CBLAS_INT N, const void *X, const CBLAS_INT incX,
                      const void *Y, const CBLAS_INT incY, void *dotu);
 void   cblas_zdotc_sub(const CBLAS_INT N, const void *X, const CBLAS_INT incX,
