@@ -10,7 +10,6 @@ includehead,includefoot]{geometry}
 \usepackage[final]{graphicx}
 \usepackage{textcase}
 \usepackage[colorlinks]{hyperref}
-% \usepackage{etoolbox}
 \usepackage{tabularx}
 \usepackage{longtable}
 \usepackage[toc,page,titletoc]{appendix}
