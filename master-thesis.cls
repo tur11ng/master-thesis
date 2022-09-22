@@ -9,16 +9,12 @@ includehead,includefoot]{geometry}
 \usepackage{fancyhdr}
 \usepackage[final]{graphicx}
 \usepackage{textcase}
-\usepackage{acronym}
 \usepackage[colorlinks]{hyperref}
 % \usepackage{etoolbox}
 \usepackage{tabularx}
 \usepackage{longtable}
 \usepackage[toc,page,titletoc]{appendix}
 \usepackage{setspace}
-\usepackage{graphicx}
-\usepackage{longtable}
-\usepackage{fancyhdr}
 \usepackage{amsmath}
 \usepackage{bm}
 \usepackage{amsbsy}
@@ -28,9 +24,7 @@ includehead,includefoot]{geometry}
 \usepackage{fontspec}
 \usepackage{polyglossia}
 \usepackage{xgreek}
-\usepackage{graphicx}
 \usepackage{float}
-\usepackage{hyperref}
 \usepackage{url}
 \usepackage[table,xcdraw,xelat,dvipsnames]{xcolor}
 \usepackage{enumitem}
@@ -70,8 +64,6 @@ includehead,includefoot]{geometry}
     classfont=roman,
     langfont=roman,
     funcfont=roman]{complexity}
-% \usepackage{refcheck}
-
 
 
 \setdefaultlanguage{greek}
@@ -122,8 +114,6 @@ scientific documents}
 
 \setcounter{tocdepth}{3}
 \setcounter{secnumdepth}{3}
-
-\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
 
 \newcommandx{\unsure}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
 \newcommandx{\change}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
