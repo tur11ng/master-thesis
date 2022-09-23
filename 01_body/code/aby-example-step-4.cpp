@@ -1,6 +1,6 @@
 share *s_multiply, *s_add;
 
-s_multiply = boolean_circuit->PutFPGate(s_X->get_sharing(), s_Y->get_sharing(), MUL, BITLEN, N);
+s_multiply = boolean_circuit->PutFPGate(s_X-, s_Y, MUL, BITLEN, N);
 
 uint32_t pos[1] = {0};
 s_add = boolean_circuit->PutSubsetGate(s_multiply, pos, 1);
