@@ -31,8 +31,9 @@ includehead,includefoot]{geometry}
 \usepackage{diagbox}
 \usepackage{xfrac}
 \usepackage{caption}
+\usepackage{subcaption}
 \usepackage{listings}
-\usepackage{minted}
+\usepackage[outputdir=out]{minted}
 \usepackage{amsthm, amssymb}
 \usepackage[warnings-off={mathtools-colon,mathtools-overbracket}]{unicode-math}
 \usepackage[acronym]{glossaries}

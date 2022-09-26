@@ -1,9 +1,9 @@
 find_package(ABY QUIET)
 if(ABY_FOUND)
-message(STATUS "Found ABY")
+    message(STATUS "Found ABY")
 elseif (NOT ABY_FOUND AND NOT TARGET ABY::aby)
-message("ABY was not found: add ABY subdirectory")
-add_subdirectory(extern/ABY)
+    message("ABY was not found: add ABY subdirectory")
+    add_subdirectory(extern/ABY)
 endif()
 
 add_executable(my_application my_application.cpp)
