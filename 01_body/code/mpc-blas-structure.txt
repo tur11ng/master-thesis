@@ -1,0 +1,46 @@
+.
+|
+|--- src
+|        |--- core
+|        |         |--- CMakeLists.txt
+|        |         |--- level-1
+|        |         |         |--- IxAMAX.cpp
+|        |         |         |--- xASUM.cpp
+|        |         |         |--- xAXPY.cpp
+|        |         |         |--- xCOPY.cpp
+|        |         |         |--- xDOT.cpp
+|        |         |         |--- xNRM2.cpp
+|        |         |         |--- xROT.cpp
+|        |         |         |--- xROTG.cpp
+|        |         |         |--- xROTM.cpp
+|        |         |         |--- xROTMG.cpp
+|        |         |         |--- xSCAL.cpp
+|        |         |         |--- xSWAP.cpp
+|        |         |--- mpc-blas.cpp
+|        |         |--- mpc-blas.hpp
+|        |         |--- utils
+|        |                   |--- utils.cpp
+|        |                   |--- utils.hpp
+|        |--- tests
+|                  |--- CMakeLists.txt
+|                  |--- integrations
+|                  |         |--- TESTintegrations.cpp
+|                  |--- main.cpp
+|                  |--- units
+|                  |         |--- level-1
+|                  |                   |--- TESTIxAMAX.cpp
+|                  |                   |--- TESTxASUM.cpp
+|                  |                   |--- TESTxAXPY.cpp
+|                  |                   |--- TESTxCOPY.cpp
+|                  |                   |--- TESTxDOT.cpp
+|                  |                   |--- TESTxNRM2.cpp
+|                  |                   |--- TESTxROT.cpp
+|                  |                   |--- TESTxROTG.cpp
+|                  |                   |--- TESTxROTM.cpp
+|                  |                   |--- TESTxROTMG.cpp
+|                  |                   |--- TESTxSCAL.cpp
+|                  |                   |--- TESTxSWAP.cpp
+|                  |--- utils
+|                  |         |--- TESTutils.cpp
+|                  |--- utils.hpp
+|--- CMakeLists.txt

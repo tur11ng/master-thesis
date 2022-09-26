@@ -30,7 +30,7 @@ includehead,includefoot]{geometry}
 \usepackage{circuitikz}
 \usepackage{diagbox}
 \usepackage{xfrac}
-\usepackage{caption}
+\usepackage[singlelinecheck=false]{caption}
 \usepackage{subcaption}
 \usepackage{listings}
 \usepackage[outputdir=out]{minted}
@@ -39,6 +39,7 @@ includehead,includefoot]{geometry}
 \usepackage[acronym]{glossaries}
 \usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
 \usepackage{subfig}
+\usepackage{pmboxdraw}
 \usepackage[
     n,
     operators,
@@ -139,3 +140,5 @@ scientific documents}
 \newcommand{\EN}[1]{\foreignlanguage{english}{#1}}
 
 \newenvironment{longlisting}{\captionsetup{type=listing}}{}
+
+
