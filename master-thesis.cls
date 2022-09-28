@@ -2,11 +2,10 @@
 \ProvidesClass{master-thesis}[Master thesis template for university of Patras]
 \LoadClass[12pt]{report}
 \usepackage[a4paper,
-top=2cm,bottom=2cm,bindingoffset=0.5cm,left=2cm,right=2cm,
-headheight=15pt,headsep=1.25cm,footskip=1.25cm,
+top=2cm,bottom=2cm,left=2.5cm,right=2.5cm,
+headheight=10pt,headsep=1cm,footskip=1cm,
 includehead,includefoot]{geometry}
 
-\usepackage{fancyhdr}
 \usepackage[final]{graphicx}
 \usepackage{textcase}
 \usepackage[colorlinks]{hyperref}
@@ -31,7 +30,6 @@ includehead,includefoot]{geometry}
 \usepackage{diagbox}
 \usepackage{xfrac}
 \usepackage[singlelinecheck=false]{caption}
-%\usepackage{subcaption}
 \usepackage{listings}
 \usepackage[outputdir=out]{minted}
 \usepackage{amsthm, amssymb}
@@ -65,7 +63,17 @@ includehead,includefoot]{geometry}
     classfont=roman,
     langfont=roman,
     funcfont=roman]{complexity}
+\usepackage{fancyhdr}
+\usepackage[bottom]{footmisc}
 
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{}
+\fancyhead[LO,RE]{Μελέτη Πρωτοκόλλων Ασφαλούς Υπολογισμού Πολλών Μερών}
+\fancyfoot[C]{}
+\fancyfoot[RO,LE]{\thepage}
+\fancyfoot[LO,RE]{Θεόδωρος Συμεωνίδης Α.Μ. 1064870}
+\renewcommand{\footrulewidth}{0.4pt}
 
 \setdefaultlanguage{greek}
 \setotherlanguages{english}
