@@ -31,7 +31,7 @@ includehead,includefoot]{geometry}
 \usepackage{diagbox}
 \usepackage{xfrac}
 \usepackage[singlelinecheck=false]{caption}
-\usepackage{subcaption}
+%\usepackage{subcaption}
 \usepackage{listings}
 \usepackage[outputdir=out]{minted}
 \usepackage{amsthm, amssymb}
