@@ -139,6 +139,24 @@ scientific documents}
 
 \newcommand{\EN}[1]{\foreignlanguage{english}{#1}}
 
-\newenvironment{longlisting}{\captionsetup{type=listing}}{}
+\newenvironment{longlisting}{\captionsetup{type=figure}}{}
 
+\makeatletter
+% Grab the old \addcontentsline, which has been already being redefined by hyperref (eventually)
+\let\latex@@addcontentsline\addcontentsline
 
+\AtBeginDocument{%
+    \renewcommand{\addcontentsline}[3]{%
+        \def\@@zzz{#1}\def\@@zxx{lol}
+        \latex@@addcontentsline{%
+            \ifx\@@zzz\@@zxx lof\else #1\fi
+        }{#2}{#3}%
+    }
+
+    \renewcommand\lstlistingname{Slika}
+    \let\l@lstlisting\l@figure
+    \let\c@lstlisting\c@figure
+    \let\thelstlisting\thefigure
+    \let\ftype@lstlisting\ftype@figure
+}
+\makeatother
