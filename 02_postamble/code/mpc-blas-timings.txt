@@ -1,0 +1,29 @@
+CBLAS ISAMAX :  duration : 0.69653ms
+MPC-BLAS ISAMAX :  duration : 75.406ms
+
+CBLAS SASUM :  duration : 0.002848ms
+MPC-BLAS SASUM :  duration : 56.703ms
+
+CBLAS SAXPY :  duration : 0.975238ms
+MPC-BLAS SAXPY :  duration : 22.27ms
+
+CBLAS SCOPY :  duration : 0.001115ms
+MPC-BLAS SCOPY :  duration : 0.406ms
+
+CBLAS SDOT :  duration : 0.001172ms
+MPC-BLAS SDOT :  duration : 45.429ms
+
+CBLAS SNRM2 :  duration : 0.00223ms
+MPC-BLAS SNRM2 :  duration : 53.697ms
+
+CBLAS SSCAL :  duration : 0.002149ms
+MPC-BLAS SSCAL :  duration : 11.299ms
+
+CBLAS SSWAP : 0.001115ms
+MPC-BLAS SSWAP : 0.573ms
+
+CBLAS SAXPY SDOT :  duration : 0.00236ms
+MPC-BLAS SAXPY SDOT :  duration : 60.47ms
+
+CBLAS SNRM2 SXAPY SDOT :  duration : 0.001205ms
+MPC-BLAS SNRM2 SXAPY SDOT :  duration : 64.788ms
