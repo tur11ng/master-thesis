@@ -101,7 +101,7 @@
 }
 
 \usepackage[natbib=true,style=authoryear,backend=bibtex,useprefix=true]{biblatex}
-\addbibresource{./shortbibliography.bib}
+\addbibresource{../shortbibliography.bib}
 
 \begin{document}
 
@@ -226,7 +226,7 @@
                         & Dealer                                                               & \multicolumn{1}{l|}{Dealer}                      & Dealer                 & \multicolumn{1}{l|}{Dealer}                      & N/A               \\ \hline
                     \end{tabular}
                 }
-                \caption{Παράδειγμα υποστηριζόμενων πρωτοκόλλων της βιβλιοθήκης MP-SPDZ \cite{mp-spdz}. Ο παρόν είναι εμπνευσμένος από έναν παρόμοιο, αλλά δυσανάγνωστο, πίνακα που υπάρχει στα εγχειρίδια χρήσης της.}
+                \caption{Παράδειγμα υποστηριζόμενων πρωτοκόλλων της βιβλιοθήκης MP-SPDZ. Ο παρόν είναι εμπνευσμένος από έναν παρόμοιο, αλλά δυσανάγνωστο, πίνακα που υπάρχει στα εγχειρίδια χρήσης της.}
                 \label{fig:mp-sdpz-protocols}
             \end{table}
         \end{block}
@@ -308,14 +308,14 @@
     \begin{frame}[fragile]{Παραδείγματα προτύπου CBLAS}
 
         \begin{block}{}
-            \begin{lstlisting}[firstnumber=1, label=glabels, xleftmargin=10pt, language=C++]
+            \begin{lstlisting}[firstnumber=1, xleftmargin=10pt, language=C++]
 float  cblas_sdot(const CBLAS_INT N,
                   const float  *X, const CBLAS_INT incX,
                   const float  *Y, const CBLAS_INT incY);
             \end{lstlisting}
         \end{block}
         \begin{block}{}
-            \begin{lstlisting}[firstnumber=1, label=glabels, xleftmargin=10pt, language=C++]
+            \begin{lstlisting}[firstnumber=1, xleftmargin=10pt, language=C++]
 void cblas_saxpy(const CBLAS_INT N,
                  const float alpha,
                  const float *X, const CBLAS_INT incX,
@@ -364,7 +364,7 @@ void cblas_saxpy(const CBLAS_INT N,
         \begin{columns}[c] % align columns
             \begin{column}{.48\textwidth}
                 \begin{block}{}
-                    \begin{lstlisting}[firstnumber=1, label=glabels, xleftmargin=5pt, basicstyle=\footnotesize, language=C++]
+                    \begin{lstlisting}[firstnumber=1, xleftmargin=5pt, basicstyle=\footnotesize, language=C++]
 float result_1 =
     cblas_sdot(4,
                test_vector_1,1,
@@ -375,7 +375,7 @@ float result_1 =
             \hfill
             \begin{column}{.48\textwidth}
                 \begin{block}{}
-                    \begin{lstlisting}[firstnumber=1, label=glabels, xleftmargin=5pt, basicstyle=\footnotesize, language=C++]
+                    \begin{lstlisting}[firstnumber=1, xleftmargin=5pt, basicstyle=\footnotesize, language=C++]
 mpcblas_initialize(SERVER,
                   "127.0.0.1",
                   7766,
@@ -398,7 +398,7 @@ mpcblas_uninitialize();
         \begin{columns}[c]
             \begin{column}{.48\textwidth}
                 \begin{block}{}
-                    \begin{lstlisting}[firstnumber=1, label=glabels, xleftmargin=5pt, basicstyle=\footnotesize, language=C++]
+                    \begin{lstlisting}[firstnumber=1, xleftmargin=5pt, basicstyle=\footnotesize, language=C++]
 cblas_saxpy(4,
     cblas_sdot(4,
                test_vector_1,1,
@@ -414,7 +414,7 @@ float result =
             \hfill
             \begin{column}{.48\textwidth}
                 \begin{block}{}
-                    \begin{lstlisting}[firstnumber=1, label=glabels, xleftmargin=5pt, basicstyle=\footnotesize, language=C++]
+                    \begin{lstlisting}[firstnumber=1, xleftmargin=5pt, basicstyle=\footnotesize, language=C++]
 mpcblas_initialize(CLIENT,
                    "127.0.0.1",
                     7766,
