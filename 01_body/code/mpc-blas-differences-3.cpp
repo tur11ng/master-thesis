@@ -1,6 +1,6 @@
 mpcblas_initialize(CLIENT, "127.0.0.1", 7766, bitlen);
 
-mpcblas_saxpy(4,
+float result = mpcblas_saxpy(4,
                        mpcblas_sdot(4,
                                     MPCBLAS_IGNORE, 1,
                                     test_vector_2, 1),

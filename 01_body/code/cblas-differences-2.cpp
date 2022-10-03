@@ -9,4 +9,4 @@ cblas_saxpy(4,
 
 
 
-result = cblas_snrm2(4, test_vector_2, 1);
+float result = cblas_snrm2(4, test_vector_2, 1);

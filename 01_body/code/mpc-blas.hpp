@@ -1,12 +1,9 @@
-/*
- * Enumerated and derived types
- */
-#define MPCBLAS_INDEX uint32_t  /* this may vary between platforms */
+#define MPCBLAS_INDEX uint32_t
 
 /*
- * ===========================================================================
- * Prototypes for level 1 BLAS functions (complex are recast as routines)
- * ===========================================================================
+ * ==========================================================
+ * Prototypes for level 1 single precision MPC-BLAS functions
+ * ==========================================================
  */
 
 mpcblas_value<float> *mpcblas_sdot(int N, std::optional<float *> X, int incX,
@@ -28,9 +25,9 @@ mpcblas_value<MPCBLAS_INDEX> *mpcblas_isamax(int N, std::optional<float *> X, in
 mpcblas_value<MPCBLAS_INDEX> *mpcblas_isamax(int N, mpcblas_value<float *> *s_X, int incX);
 
 /*
- * ===========================================================================
- * Prototypes for level 1 BLAS routines
- * ===========================================================================
+ * =========================================================
+ * Prototypes for level 1 single precision MPC-BLAS routines
+ * =========================================================
  */
 
 mpcblas_values<types_list<share *, share *>, types_list<float *, float *>> *
