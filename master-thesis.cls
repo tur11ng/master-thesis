@@ -98,6 +98,7 @@ includehead,includefoot]{geometry}
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
 \newtheorem{theorem}{Theorem}
+\newtheorem{theorem}{Theorem}
 
 \setcounter{tocdepth}{3}
 \setcounter{secnumdepth}{3}
@@ -128,7 +129,7 @@ includehead,includefoot]{geometry}
 \newenvironment{longlisting}{\captionsetup{type=figure}}{}
 
 \patchcmd{\definition}{Definition}{Ορισμός}{}{}
-
+\patchcmd{\theorem}{Theorem}{Θεώρημα}{}{}
 \makeatletter
 % Grab the old \addcontentsline, which has been already being redefined by hyperref (eventually)
 \let\latex@@addcontentsline\addcontentsline
