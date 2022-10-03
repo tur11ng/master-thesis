@@ -15,6 +15,21 @@ autolang=hyphen
 \hyphenation{Shan-non}
 \hyphenation{De-ter-min-is-tic}
 
+\newacronym{SMPC}{SMPC}{Secure Multi Party Computation, Ασφαλής Υπολογισμός Πολλών Μερών}
+\newacronym{2PC}{2PC}{2 Party Computation, μια συγκεκριμένη μορφή SMPC με μόνο δύο συμμετέχοντες}
+\newacronym{IoT}{IoT}{Internet of Things, Διαδίκτυο των Πραγμάτων}
+\newacronym{TTP}{TTP}{Trusted Third Party, Έμπιστος Τρίτος}
+\newacronym{FHE}{FHE}{Fully Homomoprhic Encryption, Πλήρης Ομομορφική Κρυπτογραφία}
+\newacronym{HE}{HE}{Homomorphic Enryption, Ομομορφική Κρυπτογραφία}
+\newacronym{SHE}{SHE}{Somewhat Homomorphic Encryption, Κάπως Ομομορφική Κρυπτογραφία}
+\newacronym{SSS}{SSS}{Shamir Secret Sharing, Διαμοίραση Μυστικών Shamir}
+\newacronym{BLAS}{BLAS}{Basic Linear Algebra Subroutines, Βασικές Υπορουτίνες Γραμμικής Άλγεβρας}
+\newacronym{RSA}{RSA}{Ronald, Shamir, Ademir, Διάσημο πρωτόκολλο ασυμμετρικής κρυπτογραφίας}
+\newacronym{GMW}{GMW}{Goldreich, Micali, Wigderson, Πρωτόκολλο SMPC}
+\newacronym{BMR}{BMR}{Ben-Or, Micali, Rogaway, Πρωτόκολλο SMPC}
+\newacronym{gcd}{GCD}{Greatest Common Divisor}
+\newacronym{lcm}{LCM}{Least Common Multiple}
+
 \begin{document}
     \input{00_preamble/preamble}
     \pagestyle{fancy}
@@ -22,5 +37,6 @@ autolang=hyphen
     \input{02_postamble/postamble}
     \input{03_bibliography/bibliography}
     \input{04_appendix/appendix}
-    
+    \glsaddallunused[\acronymtype]
+
 \end{document}

@@ -34,7 +34,7 @@ includehead,includefoot]{geometry}
 \usepackage[outputdir=out]{minted}
 \usepackage{amsthm, amssymb}
 \usepackage[warnings-off={mathtools-colon,mathtools-overbracket}]{unicode-math}
-\usepackage[acronym]{glossaries}
+\usepackage[nonumberlist, acronym, automake]{glossaries-extra}
 \usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
 \usepackage{subfig}
 \usepackage{pmboxdraw}
@@ -98,29 +98,6 @@ includehead,includefoot]{geometry}
 \newtheorem{definition}{Definition}[section]
 \newtheorem{theorem}{Theorem}
 
-\newglossaryentry{maths}
-{
-    name=mathematics,
-    description={Mathematics is what mathematicians do}
-}
-
-\newglossaryentry{latex}
-{
-    name=latex,
-    description={Is a markup language specially suited for 
-scientific documents}
-}
-
-
-\newglossaryentry{formula}
-{
-    name=formula,
-    description={A mathematical expression}
-}
-
-\newacronym{gcd}{GCD}{Greatest Common Divisor}
-\newacronym{lcm}{LCM}{Least Common Multiple}
-
 \setcounter{tocdepth}{3}
 \setcounter{secnumdepth}{3}
 
@@ -168,3 +145,5 @@ scientific documents}
     \let\ftype@lstlisting\ftype@figure
 }
 \makeatother
+
+\makeglossaries
