@@ -342,6 +342,7 @@ void cblas_saxpy(const CBLAS_INT N,
     \end{frame}
 
     \begin{frame}{Η βιβλιοθήκη MPC-BLAS}
+        \begin{block}{}
         \textbf{Περιγραφή} :
         \begin{itemize}
             \item Ένα πρόγραμμα που είναι χρησιμοποιεί τη διεπαφή CBLAS απαιτεί ελάχιστες αλλαγές στον πηγαίο του κώδικα για να χρησιμοποιήσει την διεπαφή MPC-BLAS
@@ -349,15 +350,18 @@ void cblas_saxpy(const CBLAS_INT N,
             \item Υποστηρίζει μόνο το λειτουργικό σύστημα Linux, διότι είναι το μοναδικό που υποστηρίζεται από την βιβλιοθήκη ABY. Έχει αναπτυχθεί και ελεγχθεί σε Ubuntu 22.04 LTS
             \item Υλοποιεί όλες τις Level-1 BLAS ρουτίνες εκτός από τις xROTx, διότι η βιβλιοθήκη ABY έχει πολύ περιορισμένη υποστήριξη για πράξεις πινάκων.
         \end{itemize}
+            \end{block}
     \end{frame}
 
     \begin{frame}{Η βιβλιοθήκη MPC-BLAS}
+        \begin{block}{}
         \textbf{Τεχνικές Προδιαγραφές} :
         \begin{itemize}
             \item Γραμμένη σε C++20 και χτισμένη με CMake
             \item Βασισμένη στην βιβλιοθήκη ABY για τις κρυπτογραφικές πράξεις και την εκτέλεση του πρωτοκόλλου GMW.
             \item Απαιτεί στατική σύνδεση (static linking), λόγω περιορισμών της βιβλιοθήκης ABY
         \end{itemize}
+            \end{block}
     \end{frame}
 
     \begin{frame}[fragile]{Προσαρμογή προγράμματος από CBLAS σε MPC-BLAS 1}
