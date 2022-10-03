@@ -8,6 +8,7 @@ includehead,includefoot]{geometry}
 
 \usepackage[final]{graphicx}
 \usepackage{textcase}
+\usepackage{etoolbox}
 \usepackage[colorlinks]{hyperref}
 \usepackage{tabularx}
 \usepackage{longtable}
@@ -125,6 +126,8 @@ includehead,includefoot]{geometry}
 \newcommand{\EN}[1]{\foreignlanguage{english}{#1}}
 
 \newenvironment{longlisting}{\captionsetup{type=figure}}{}
+
+\patchcmd{\definition}{Definition}{Ορισμός}{}{}
 
 \makeatletter
 % Grab the old \addcontentsline, which has been already being redefined by hyperref (eventually)
