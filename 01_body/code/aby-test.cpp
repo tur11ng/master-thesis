@@ -8,7 +8,7 @@
 
 #define CBLAS_INT int32_t
 
-float  cblas_sdsdot(const CBLAS_INT N, const float alpha, const float *X,
+float  cblas_sdot(const CBLAS_INT N, const float alpha, const float *X,
                   const CBLAS_INT incX, const float *Y, const CBLAS_INT incY) {
 ABYParty *party = new ABYParty(SERVER, addr="127.0.0.1", port=7766, seclvl=LT,
                                            bitlen=32, n_threads=2, mg_algo=MT_OT, reserve_gates=4000000, "OUR_ABY_CIRCUIT_PATH_HERE");
