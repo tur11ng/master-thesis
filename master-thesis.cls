@@ -96,6 +96,7 @@ includehead,includefoot]{geometry}
 }
 
 \theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
 
 \setcounter{tocdepth}{3}
 \setcounter{secnumdepth}{3}
