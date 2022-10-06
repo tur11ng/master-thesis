@@ -30,6 +30,7 @@ includehead,includefoot]{geometry}
 \usepackage{circuitikz}
 \usepackage{diagbox}
 \usepackage{xfrac}
+\usepackage{mdframed}
 \usepackage[singlelinecheck=false]{caption}
 \usepackage{listings}
 \usepackage[outputdir=out]{minted}
