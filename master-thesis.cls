@@ -30,6 +30,7 @@ includehead,includefoot]{geometry}
 \usepackage{circuitikz}
 \usepackage{diagbox}
 \usepackage{xfrac}
+\usepackage{mdframed}
 \usepackage[singlelinecheck=false]{caption}
 \usepackage{listings}
 \usepackage[outputdir=out]{minted}
@@ -97,8 +98,6 @@ includehead,includefoot]{geometry}
 
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
-\newtheorem{theorem}{Theorem}
-\newtheorem{theorem}{Theorem}
 
 \setcounter{tocdepth}{3}
 \setcounter{secnumdepth}{3}
