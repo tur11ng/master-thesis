@@ -223,6 +223,51 @@ H ΑΒΥ είναι αρκετά εύχρηστη και αυτό αποτελε
 
 Επόμενο σημαντικό σημείο είναι οι κλάσεις \mintinline{cpp}{mpcblas_value} και \mintinline{cpp}{mpcblas_values}. Θα αναλύσουμε την πρώτη συνάρτηση, αφού η δεύτερη είναι γενίκευση της πρώτης για περισσότερες από μια τιμές. Ένα αντικείμενο (στιγμιότυπο) αυτής της κλάσης επιστρέφεται από κάθε MPC-BLAS μαθηματική συνάρτηση (προσοχή αναφερόμαστε σε συναρτήσεις και όχι ρουτίνες) που καλείται και επιστρέφει μια μοναδική τιμή. Το αντικείμενο αυτό αποθηκεύει εσωτερικά αντικείμενα τύπου \mintinline{cpp}{share*} της ABY. Ουσιαστικά, η κλάση \mintinline{cpp}{mpcblas_values} πρόκειται για μια κλάση περιτυλίγματος (wrapper class). Έτσι, μπορούμε να φανταστούμε πως όταν χρησιμοποιείται η CBLAS βιβλιοθήκη, μεταξύ διαδοχικών κλήσεων, τα αποτελέσματα προηγούμενων κλήσεων μπορούν να περαστούν ως ορίσματα στις επόμενες σε απλή μη κρυπτογραφημένη μορφή, ενώ στην περίπτωση που χρησιμοποιείται η βιβλιοθήκη MPC-BLAS τα αποτελέσματα προηγούμενων κλήσεων μπορούν να περαστούν ως ορίσματα στις επόμενες σε κρυπτογραφημένη μορφή. Το παραπάνω αναπαρίσταται στα Σχήματα \ref{fig:without_mpcblas} και \ref{fig:with_mpcblas}. Η ιδιότητα αυτή κάνει ένα αντικείμενο της κλάσης \mintinline{text}{mpcblas_value} κατάλληλο ώστε να περαστεί ως όρισμα σε κάποια άλλη συνάρτηση MPC-BLAS. Προφανώς, για να μπορεί να επιτευχθεί αυτό πρέπει να υπάρχουν και τα κατάλληλα πρότυπα για κάθε συνάρτηση MPC-BLAS. Στο Σχήμα \ref{code:mpcblas-sdot} φαίνονται τα πρότυπα της βιβλιοθήκης για τη συνάρτηση \mintinline{cpp}{sdot}. Παρατηρούμε πως σε κάθε συνάρτηση της διεπαφής μπορεί να περαστεί ως όρισμα ένα αντικείμενο τύπου \mintinline{text}{mpcblas_value}.
 
+\begin{figure}[h]
+    \begin{minipage}[b]{\textwidth}
+        \centering
+        \begin{circuitikz}
+            \draw
+            (0,2) node[ieeestd and port] (myand1) {}
+            (0,0) node[ieeestd and port] (myand2) {}
+            (3,1) node[ieeestd and port] (myand) {}
+            (myand1.out) -| (myand.in 1)
+            (myand2.out) -| (myand.in 2)
+            ;
+            \draw (myand1.in 1) node[left=0.01cm] {$w_0$};
+            \draw (myand1.in 2) node[left=0.01cm] {$w_1$};
+            \draw (myand1.out) node[right=0.005cm, yshift=0.2cm] {$w_4$};
+            \draw (myand2.in 1) node[left=0.01cm] {$w_2$};
+            \draw (myand2.in 2) node[left=0.01cm] {$w_3$};
+            \draw (myand2.out) node[right=0.005cm, yshift=0.2cm] {$w_5$};
+            \draw (myand.out) node[right=0.005cm, yshift=0.2cm] {$w_6$};
+        \end{circuitikz}
+        \caption{Σχηματική αναπαράσταση ενός Boolean κυκλώματος χωρίς τη χρήση της βιβλιοθήκης MPC-BLAS στο οποίο $w_i \in \bin$. }
+        \label{fig:without_mpcblas}
+    \end{minipage}\\
+    \begin{minipage}[b]{\textwidth}
+        \centering
+        \begin{circuitikz}
+            \draw
+            (0,2) node[ieeestd and port] (myand1) {}
+            (0,0) node[ieeestd and port] (myand2) {}
+            (3,1) node[ieeestd and port] (myand) {}
+            (myand1.out) -| (myand.in 1)
+            (myand2.out) -| (myand.in 2)
+            ;
+            \draw (myand1.in 1) node[left=0.01cm] {\mintinline{cpp}{mpcblas_value(w_0)}};
+            \draw (myand1.in 2) node[left=0.01cm] {\mintinline{cpp}{mpcblas_value(w_1)}};
+            \draw (myand1.out) node[right=0.005cm, yshift=0.5cm] {\mintinline{cpp}{mpcblas_value(w_4)}};
+            \draw (myand2.in 1) node[left=0.01cm] {\mintinline{cpp}{mpcblas_value(w_2)}};
+            \draw (myand2.in 2) node[left=0.01cm] {\mintinline{cpp}{mpcblas_value(w_3)}};
+            \draw (myand2.out) node[right=0.005cm, yshift=-0.5cm] {\mintinline{cpp}{mpcblas_value(w_5)}};
+            \draw (myand.out) node[right=0.005cm, yshift=0.01cm] {\mintinline{cpp}{mpcblas_value(w_6)}};
+        \end{circuitikz}
+        \caption{Σχηματική αναπαράσταση του Boolean κυκλώματος του Σχήματος \ref{fig:without_mpcblas} το οποίο έχει μετατραπεί ώστε να χρησιμοποιεί την βιβλιοθήκη MPC-BLAS. Ουσιαστικά παρατηρούμε πως αντί για τις δυαδικές τιμές $w_i$, μέσα στο δίκτυο ρέουν αντικείμενα της κλάσης \mintinline{cpp}{mpcblas_value}.}
+        \label{fig:with_mpcblas}
+    \end{minipage}
+\end{figure}
+
 \begin{figure}[h!]
     \begin{center}
         \begin{minted}[fontsize=\scriptsize,frame=single]{cpp}
@@ -290,51 +335,6 @@ H ΑΒΥ είναι αρκετά εύχρηστη και αυτό αποτελε
     \caption{Ο κώδικας της διεπαφής MPC-BLAS (μέρος του αρχείου \mintinline{text}{mpc-blas.hpp}) για το οποίο δεν υπάρχουν αντίστοιχες συναρτήσεις στη CBLAS και αποτελεί ουσιαστικά μια επέκταση της διεπαφής της.}
     \label{code:mpc-blas-header-extended}
 \end{longlisting}
-
-\begin{figure}[h]
-    \begin{minipage}[b]{\textwidth}
-        \centering
-        \begin{circuitikz}
-            \draw
-            (0,2) node[ieeestd and port] (myand1) {}
-            (0,0) node[ieeestd and port] (myand2) {}
-            (3,1) node[ieeestd and port] (myand) {}
-            (myand1.out) -| (myand.in 1)
-            (myand2.out) -| (myand.in 2)
-            ;
-            \draw (myand1.in 1) node[left=0.01cm] {$w_0$};
-            \draw (myand1.in 2) node[left=0.01cm] {$w_1$};
-            \draw (myand1.out) node[right=0.005cm, yshift=0.2cm] {$w_4$};
-            \draw (myand2.in 1) node[left=0.01cm] {$w_2$};
-            \draw (myand2.in 2) node[left=0.01cm] {$w_3$};
-            \draw (myand2.out) node[right=0.005cm, yshift=0.2cm] {$w_5$};
-            \draw (myand.out) node[right=0.005cm, yshift=0.2cm] {$w_6$};
-        \end{circuitikz}
-        \caption{Σχηματική αναπαράσταση ενός Boolean κυκλώματος χωρίς τη χρήση της βιβλιοθήκης MPC-BLAS στο οποίο $w_i \in \bin$. }
-        \label{fig:without_mpcblas}
-    \end{minipage}\\
-    \begin{minipage}[b]{\textwidth}
-        \centering
-        \begin{circuitikz}
-            \draw
-            (0,2) node[ieeestd and port] (myand1) {}
-            (0,0) node[ieeestd and port] (myand2) {}
-            (3,1) node[ieeestd and port] (myand) {}
-            (myand1.out) -| (myand.in 1)
-            (myand2.out) -| (myand.in 2)
-            ;
-            \draw (myand1.in 1) node[left=0.01cm] {\mintinline{cpp}{mpcblas_value(w_0)}};
-            \draw (myand1.in 2) node[left=0.01cm] {\mintinline{cpp}{mpcblas_value(w_1)}};
-            \draw (myand1.out) node[right=0.005cm, yshift=0.5cm] {\mintinline{cpp}{mpcblas_value(w_4)}};
-            \draw (myand2.in 1) node[left=0.01cm] {\mintinline{cpp}{mpcblas_value(w_2)}};
-            \draw (myand2.in 2) node[left=0.01cm] {\mintinline{cpp}{mpcblas_value(w_3)}};
-            \draw (myand2.out) node[right=0.005cm, yshift=-0.5cm] {\mintinline{cpp}{mpcblas_value(w_5)}};
-            \draw (myand.out) node[right=0.005cm, yshift=0.01cm] {\mintinline{cpp}{mpcblas_value(w_6)}};
-        \end{circuitikz}
-        \caption{Σχηματική αναπαράσταση του Boolean κυκλώματος του Σχήματος \ref{fig:without_mpcblas} το οποίο έχει μετατραπεί ώστε να χρησιμοποιεί την βιβλιοθήκη MPC-BLAS. Ουσιαστικά παρατηρούμε πως αντί για τις δυαδικές τιμές $w_i$, μέσα στο δίκτυο ρέουν αντικείμενα της κλάσης \mintinline{cpp}{mpcblas_value}.}
-        \label{fig:with_mpcblas}
-    \end{minipage}
-\end{figure}
 
 \subsubsection{Παραδείγματα χρήσης}
 
