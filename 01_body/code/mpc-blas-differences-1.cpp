@@ -1,4 +1,5 @@
-mpcblas_initialize(SERVER, "127.0.0.1", 7766, bitlen);
+mpcblas_initialize(SERVER, "127.0.0.1",
+                   7766, bitlen);
 
 float result_1 = mpcblas_sdot(4,
                         test_vector_1, 1,

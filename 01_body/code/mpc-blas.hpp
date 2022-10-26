@@ -21,8 +21,10 @@ mpcblas_value<float> *mpcblas_snrm2(int N, mpcblas_value<float *> *s_X, int incX
 mpcblas_value<float> *mpcblas_sasum(int N, std::optional<float *> X, int incX);
 mpcblas_value<float> *mpcblas_sasum(int N, mpcblas_value<float *> *s_X, int incX);
 
-mpcblas_value<MPCBLAS_INDEX> *mpcblas_isamax(int N, std::optional<float *> X, int incX);
-mpcblas_value<MPCBLAS_INDEX> *mpcblas_isamax(int N, mpcblas_value<float *> *s_X, int incX);
+mpcblas_value<MPCBLAS_INDEX> *mpcblas_isamax(int N,
+                                            std::optional<float *> X, int incX);
+mpcblas_value<MPCBLAS_INDEX> *mpcblas_isamax(int N,
+                                            mpcblas_value<float *> *s_X, int incX);
 
 /*
  * =========================================================
